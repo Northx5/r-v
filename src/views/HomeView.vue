@@ -1,43 +1,50 @@
 <template>
-<section class="banner">
-	<h2 class="title">Get online week 2021</h2>
-	<span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-	<div class="cta">
-		<a href="#">Get involved now!</a>
-	</div>	
+<section class="banner grid layout">
+	<h1 class="title flex align-items-center">Get online week 2021</h1>
+	<span class="description flex align-items-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie turpis. Orci varius natoque penatibus et magnis.</span>
+	<a href="#" class="cta cta-link primary color-red">Get involved now!</a>
 </section>
 
-<section class="info">
-	<div class="image"></div>
-	<div class="text">
-		<p>We are a social change charity, helping people to improve their lives through digital.</p>
-		<p>We tackle the most pressing issues of our time, working with partners in thousands of communities accross the UK and further afield.</p>		
-		<div class="cta">
-			<a href="#">Learn more about us</a>
-		</div>
+<section class="info grid">
+	<img src="../assets/images/banner-2.jpg" alt="Charity description image">
+	<div class="text flex f-column justify-content-s-a">
+		<h2>We are a social change charity, helping people to improve their lives through digital.</h2>
+		<p>We tackle the most pressing issues of our time, working with partners in thousands of communities accross the UK and further afield.</p>
+		<a href="#" class="cta cta-link alternative width-20 color-white">Learn more about us</a>
 	</div>
 </section>
 
 <section class="help">
-	<h3>How can we help you?</h3>
-	<p>Let us know who you are and what you're looking for, and we'll help get you to the right place.</p>
-	<div class="info-panel">
-		<span>I am an individual and I want to learn</span>
-		<a href="#">Start now</a>
+	<div class="wrapper flex f-column justify-content-s-a">
+		<h3>How can we help you?</h3>
+		<p>Let us know who you are and what you're looking for, and we'll help get you to the right place.</p>
+		<form @submit.prevent class="info-panel flex align-items-center justify-content-center">
+			<label for="entity">I am</label>
+			<select name="entity" id="entity">
+				<option v-for="(item, index) in entityOptions" :key="index" value="{{item.value}}">{{ item.label }}</option>
+			</select>
+			<label for="want">and I want</label>
+			<select name="want" id="want">
+				<option v-for="(item, index) in wantOptions" :key="index" value="{{item.value}}">{{item.label}}</option>
+			</select>
+			<button class="action-button cta-link">Start now</button>
+		</form>
 	</div>
 </section>
 
 <section class="what-we-do">
-	<h3>What do we do?</h3>
-	<p>You might not have heard of us, but we're the people behind the following impactful programmes.</p>
-	<div class="cards">
-		<div class="card"  v-for="(card, index) in cards" :key="index">
-			<h4>{{ card.title }}</h4>
-			<p>{{ card.description }}</p>
-			<a href="#" class="cta">{{ card.cta }}</a>
+	<div class="wrapper flex f-column justify-content-s-a">
+		<h3>What do we do?</h3>
+		<p>You might not have heard of us, but we're the people behind the following impactful programmes.</p>
+		<div class="cards">
+			<div class="card flex f-column justify-content-s-a"  v-for="(card, index) in cards" :key="index">
+				<h3>{{ card.title }}</h3>
+				<p>{{ card.description }}</p>
+				<a href="#" class="cta cta-link primary black-border color-red">{{ card.cta }}</a>
+			</div>
 		</div>
+		<a href="#" class="cta cta-link primary color-red width-25 align-self-center">More about what we do</a>
 	</div>
-	<a href="#" class="">More about what we do</a>
 </section>
 </template>
 <script>
@@ -65,88 +72,22 @@ export default {
 					description: 'Lorem ipsum dolor sit amet',
 					cta: 'Read more'
 				}
+			],
+			entityOptions: [
+				{ label: 'an individual', value: 'individual' },
+				{ label: 'a charity', value: 'charity' },
+				{ label: 'a business', value: 'business' }
+			],
+			wantOptions: [
+				{ label: 'to learn', value: 'learn' },
+				{ label: 'to make', value: 'make' },
+				{ label: 'to hire', value: 'hire' }
 			]
 		};
 	}
 };
 </script>
-<style lang="scss" scoped>
-.banner {
-  grid-column: main-start / main-end;
-  display: grid;
-  grid-template-columns: [main-start] 50px [content-start] repeat(12, 1fr) [content-end] 50px [main-end];
-  grid-template-rows: repeat(12, 1fr);
-  height: 35rem;
-  background-image: url('../assets/images/banner-1.jpg');
-
-  .title {
-    grid-column: content-start / 10;
-    grid-row: 3 / span 3;
-    background-color: yellowgreen;
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    font-size: 7rem;
-  }
-
-  .description {
-    line-height: 2rem;
-    grid-column: content-start / 8;
-    grid-row: 7 / span 3;
-    background-color: tan;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .cta {
-    grid-column: content-start / -1;
-    grid-row: 11 / 12;
-    background-color:teal;
-  }
-
-}
-.info {
-  grid-column: main-start / main-end;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 25rem;
-    .image {
-    background-image: url('../assets/images/banner-2.jpg');
-    }
-    .text {
-      background-color: crimson;
-    }
-}
-.help {
-  height: 23.5rem;
-  grid-column: content-start / content-end;
-  background-color: var(--c-light-gray);
-  color: var(--c-black);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 3rem 0;
-  h3 {
-    width: 100%
-  }
-  .info-panel {
-    width: 100%
-  }
-}
-.what-we-do {
-  height: 36.5rem;
-  grid-column: content-start / content-end;
-  background-color: darkorange;
-  
-  .cards {
-    display: flex;
-    justify-content: space-between;
-    
-    .card {
-      color: var(--c-black);
-      background-color: var(--c-white);
-    }
-  }
-}
+<style lang="scss">
+// Importing page specific css only on the page itself to improve site performance
+@import '../assets/scss/pages/home.scss';
 </style>
