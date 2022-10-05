@@ -1,7 +1,7 @@
 <template>
 <section class="banner grid layout">
 	<h1 class="title flex align-items-center">Get online week 2021</h1>
-	<span class="description flex align-items-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie turpis. Orci varius natoque penatibus et magnis.</span>
+	<span class="description flex align-items-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie turpis. Orci varius natoque.</span>
 	<a href="#" class="cta cta-link primary color-red">Get involved now!</a>
 </section>
 
@@ -9,7 +9,7 @@
 	<img src="../assets/images/banner-2.jpg" alt="Charity description image">
 	<div class="text flex f-column justify-content-s-a">
 		<h2>We are a social change charity, helping people to improve their lives through digital.</h2>
-		<p>We tackle the most pressing issues of our time, working with partners in thousands of communities accross the UK and further afield.</p>
+		<p class="m-t-1 m-b-1">We tackle the most pressing issues of our time, working with partners in thousands of communities accross the UK and further afield.</p>
 		<a href="#" class="cta cta-link alternative width-20 color-white">Learn more about us</a>
 	</div>
 </section>
@@ -17,7 +17,7 @@
 <section class="help">
 	<div class="wrapper flex f-column justify-content-s-a">
 		<h3>How can we help you?</h3>
-		<p>Let us know who you are and what you're looking for, and we'll help get you to the right place.</p>
+		<p class="m-t-1 m-b-1">Let us know who you are and what you're looking for, and we'll help get you to the right place.</p>
 		<form @submit.prevent class="info-panel flex align-items-center justify-content-center">
 			<label for="entity">I am</label>
 			<select name="entity" id="entity">
@@ -35,15 +35,15 @@
 <section class="what-we-do">
 	<div class="wrapper flex f-column justify-content-s-a">
 		<h3>What do we do?</h3>
-		<p>You might not have heard of us, but we're the people behind the following impactful programmes.</p>
-		<div class="cards">
+		<p class="m-t-1 m-b-1">You might not have heard of us, but we're the people behind the following impactful programmes.</p>
+		<div class="cards grid">
 			<div class="card flex f-column justify-content-s-a"  v-for="(card, index) in cards" :key="index">
 				<h3>{{ card.title }}</h3>
 				<p>{{ card.description }}</p>
 				<a href="#" class="cta cta-link primary black-border color-red">{{ card.cta }}</a>
 			</div>
 		</div>
-		<a href="#" class="cta cta-link primary color-red width-25 align-self-center">More about what we do</a>
+		<a href="#" class="cta cta-link primary color-red width-25 align-self-center m-t-1">More about what we do</a>
 	</div>
 </section>
 </template>

@@ -8,7 +8,7 @@
 		<nav aria-label="Call to Action Links" class="cta-links flex justify-self-end">
 			<ul class="flex text-align-center">
 				<li v-for="(item, index) in headerLinks" :key="index" class="width-10">
-					<a href="item.to" class="">{{ item.label }} </a>
+					<a :href="item.to">{{ item.label }}</a>
 				</li>
 			</ul>
 		</nav>
@@ -17,7 +17,9 @@
 		</div>
 		<nav class="main-navigation">
 			<ul class="flex justify-content-s-b justify-self-end align-items-center">
-				<li v-for="(item, index) in getMenuItems" :key="index">{{ item.label }}</li>
+				<li v-for="(item, index) in getMenuItems" :key="index">
+					<router-link :to="item.to">{{ item.label }}</router-link>
+				</li>
 			</ul>
 		</nav>
 		<nav class="hamburger">
@@ -26,7 +28,7 @@
 			<span></span>
 		</nav>
 	</header>
-	<main class="content grid layout">
+	<main class="content grid">
 		<RouterView />
 	</main>
 </div>

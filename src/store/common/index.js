@@ -3,11 +3,11 @@ export const common = {
   state: {
     menuItems: [
       { label: 'Home', to: '/' },
-      { label: 'What we do', to: '/' },
-      { label: 'The digital divide', to: '/' },
-      { label: 'Get involved', to: '/' },
-      { label: 'Our network', to: '/' },
-      { label: 'Insights', to: '/' },
+      { label: 'What we do', to: '/what-we-do' },
+      { label: 'The digital divide', to: '/the-digital-divide' },
+      { label: 'Get involved', to: '/get-involved' },
+      { label: 'Our network', to: '/our-network' },
+      { label: 'Insights', to: '/insights' },
     ]
   },
   getters: {

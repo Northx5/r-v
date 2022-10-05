@@ -37,6 +37,14 @@
 }
 
 //Margin helpers
+.m-t-1 {
+  margin-block-start: var(--spacing-1);
+}
+
+.m-b-1 {
+  margin-block-end: var(--spacing-1);
+}
+
 .m-l-5 {
   margin-inline-start: var(--spacing-5);
 }

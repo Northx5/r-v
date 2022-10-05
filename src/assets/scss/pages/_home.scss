@@ -57,38 +57,58 @@
 }
 .info {
   grid-column: main-start / main-end;
-  grid-template-columns: repeat(2, 1fr);
-  height: 25rem;
+  min-height: 25rem;
+
+  @media screen and (min-width: $bp-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    @media screen and (min-width: $bp-large) {
+      max-height: 30rem;
+    }
+  }
 
   .text {
     color: var(--c-white);
     background-color: var(--c-green);
-    padding: 3rem;
+    padding: 3rem 5rem;
+
+    @media screen and (min-width: $bp-medium) {
+      padding: 3rem;
+    }
   }
 }
 .help {
-  height: 25rem;
+  min-height: 25rem;
   grid-column: main-start / main-end;
   background-color: var(--c-light-gray);
   color: var(--c-black);
 
-  .wrapper {
-    height: 100%;
-    padding: 3rem 0;
-  }
-
   p {
-    font-size: var(--f-18);
+    font-size: var(--f-16);
+
+    @media screen and (min-width: $bp-medium) {
+      font-size: var(--f-18);
+    }
   }
 
   .info-panel {
     background-color: var(--c-white);
     padding: 3rem 0;
     font-size: var(--f-30);
+    flex-direction: column;
+
+    @media screen and (min-width: $bp-medium) {
+      flex-direction: row;
+    }
 
     select {
       cursor: pointer;
-      font-size: 3rem;
+      font-size: var(--f-30);
       margin: 0 1rem;
       border: none;
       color: var(--c-blue);
@@ -96,25 +116,29 @@
   }
 }
 .what-we-do {
-  height: 40rem;
+  min-height: 40rem;
   grid-column: main-start / main-end;
   background-color: var(--c-blue);
   color: var(--c-white);
 
-  .wrapper {
-    height: 100%;
-  }
-
   .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     column-gap: 2rem;
+
+    @media screen and (min-width: $bp-medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     .card {
       height: 20rem;
       align-items: center;
       color: var(--c-black);
       background-color: var(--c-white);
+      margin-block-end: var(--spacing-1);
+
+      @media screen and (min-width: $bp-medium) {
+        margin-block-end: var(--spacing-0);
+      }
     }
   }
 }

@@ -33,27 +33,34 @@ a {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: var(--f-30);
 
   @media screen and (min-width: $bp-large) {
-    font-size: 5rem;
+    font-size: var(--f-50);
   }
   @media screen and (min-width: $bp-largest) {
-    font-size: 7rem;
+    font-size: var(--f-70);
   }
 }
 
-h2 {
-  font-size: 2.6rem;
-  font-weight: var(--font-weight-600);
-}
-
+h2,
 h3 {
-  font-size: 2.6rem;
+  font-size: var(--f-20);
   font-weight: var(--font-weight-600);
+
+  @media screen and (min-width: $bp-large) {
+    font-size: var(--f-22);
+  }
+  @media screen and (min-width: $bp-largest) {
+    font-size: var(--f-26);
+  }
 }
 ul {
   list-style-type: none;
+}
+
+p {
+  margin-block-start: var(--spacing-1);
 }
 
 .layout {
@@ -64,11 +71,15 @@ ul {
   grid-template-columns: repeat(12, 1fr);
 }
 
+.wrapper {
+  height: 100%;
+  padding: 3rem 0;
+}
+
 //Below code is shared throughout the site so it's included in main.scss
 .container {
   width: 100%;
   background-color: var(--c-white);
-  min-height: 100vh;
   margin: 0 auto;
 
   @media screen and (min-width: $bp-largest) {
