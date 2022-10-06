@@ -13,7 +13,7 @@
 			</ul>
 		</nav>
 		<div class="logo flex align-items-center">
-			<img src="src/assets/images/good-things-foundation-logo.png" alt="Good Things Foundation" class="image">
+			<img src="./assets/images/good-things-foundation-logo.png" alt="Good Things Foundation" class="image">
 		</div>
 		<nav class="main-navigation">
 			<ul class="flex justify-content-s-b justify-self-end align-items-center">

@@ -14,5 +14,11 @@ export const common = {
     getMenuItems: (state) => {
       return state.menuItems;
     }
+  },
+  actions: {
+
+  },
+  mutations: {
+
   }
 };
