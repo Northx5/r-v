@@ -1,6 +1,6 @@
 # reason-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Example project to showcase semantic HTML layout with SEO and accessibility coding practices kept in mind. Used SASS as css preprocessor.
 
 ## Recommended IDE Setup
 
